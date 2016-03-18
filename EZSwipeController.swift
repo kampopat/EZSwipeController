@@ -70,6 +70,7 @@ public class EZSwipeController: UIViewController {
     public var navigationBarShouldBeOnBottom = false
     public var navigationBarShouldNotExist = false
     public var cancelStandardButtonEvents = false
+    public var pageViewControllerNavigationOrientation = UIPageViewControllerNavigationOrientation.Horizontal
 
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -165,7 +166,7 @@ public class EZSwipeController: UIViewController {
     }
 
     private func setupPageViewController() {
-        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
+        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: pageViewControllerNavigationOrientation, options: nil)
         pageViewController.dataSource = self
         pageViewController.delegate = self
         pageViewController.setViewControllers([stackPageVC[stackStartLocation]], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
