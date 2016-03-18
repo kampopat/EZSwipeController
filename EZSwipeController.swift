@@ -28,20 +28,12 @@ public class EZSwipeController: UIViewController {
         }
         public static var ScreenWidth: CGFloat {
             get {
-                if UIInterfaceOrientationIsPortrait(Orientation) {
-                    return UIScreen.mainScreen().bounds.size.width
-                } else {
-                    return UIScreen.mainScreen().bounds.size.height
-                }
+                return UIScreen.mainScreen().bounds.width
             }
         }
         public static var ScreenHeight: CGFloat {
             get {
-                if UIInterfaceOrientationIsPortrait(Orientation) {
-                    return UIScreen.mainScreen().bounds.size.height
-                } else {
-                    return UIScreen.mainScreen().bounds.size.width
-                }
+                return UIScreen.mainScreen().bounds.height
             }
         }
         public static var StatusBarHeight: CGFloat {
@@ -51,11 +43,8 @@ public class EZSwipeController: UIViewController {
         }
         public static var ScreenHeightWithoutStatusBar: CGFloat {
             get {
-                if UIInterfaceOrientationIsPortrait(Orientation) {
-                    return UIScreen.mainScreen().bounds.size.height - StatusBarHeight
-                } else {
-                    return UIScreen.mainScreen().bounds.size.width - StatusBarHeight
-                }
+                
+                return UIScreen.mainScreen().bounds.size.height - StatusBarHeight
             }
         }
         public static let navigationBarHeight: CGFloat = 44
